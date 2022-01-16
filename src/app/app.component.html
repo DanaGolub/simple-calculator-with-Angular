@@ -1,3 +1,27 @@
 <h1>
-  Welcome to {{title}} {{sum}}!
+  Welcome to {{title}}!
+  <br />
+  <div>
+  <input [(ngModel)]="firstNumAdd">
+  <!-- <br/> -->
+  +
+  <input [(ngModel)]="secondNumAdd">
+  <button (click)=performAddition();createAddEquation() > = </button>
+  <span *ngIf="resultVal">
+    {{equationAdd}}
+  </span>
+</div>
+
+<div>
+  <input [(ngModel)]="firstNumSubtract">
+  <!-- <br/> -->
+  -
+  <input [(ngModel)]="secondNumSubtract">
+  <button (click)=performSubtraction();createSubtractEquation() > = </button>
+  <span *ngIf="resultVal">
+    {{equationSubtract}}
+  </span>
+</div>
+
 </h1>
+<!-- input type='button' -->
