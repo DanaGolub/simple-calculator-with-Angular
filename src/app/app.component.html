@@ -1,6 +1,7 @@
 <h1>
   Welcome to {{title}}!
   <br />
+
   <div>
   <input [(ngModel)]="firstNumAdd">
   <!-- <br/> -->
@@ -20,6 +21,28 @@
   <button (click)=performSubtraction();createSubtractEquation() > = </button>
   <span *ngIf="resultVal">
     {{equationSubtract}}
+  </span>
+</div>
+
+<div>
+  <input [(ngModel)]="firstNumMultiply">
+  <!-- <br/> -->
+  *
+  <input [(ngModel)]="secondNumMultiply">
+  <button (click)=performMultiplication();createMultiplyEquation() > = </button>
+  <span *ngIf="resultVal">
+    {{equationMultiply}}
+  </span>
+</div>
+
+<div>
+  <input [(ngModel)]="firstNumDivide">
+  <!-- <br/> -->
+  /
+  <input [(ngModel)]="secondNumDivide">
+  <button (click)=performDivision();createDivideEquation() > = </button>
+  <span *ngIf="resultVal">
+    {{equationDivide}}
   </span>
 </div>
 
