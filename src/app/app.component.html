@@ -3,48 +3,59 @@
   <br />
 
   <div>
-  <input [(ngModel)]="firstNumAdd">
-  <!-- <br/> -->
-  +
-  <input [(ngModel)]="secondNumAdd">
-  <button (click)=performAddition();createAddEquation() > = </button>
-  <span *ngIf="resultVal">
-    {{equationAdd}}
-  </span>
-</div>
+    <input [(ngModel)]="firstNumAdd" type="text" name="firstNumberToAdd" #firstNumberToAdd="ngModel" pattern="^[1-9]\d*(\.\d+)?$" >
+    +
+    <input [(ngModel)]="secondNumAdd" type="text" name="secondNumberToAdd" #secondNumberToAdd="ngModel" pattern="^[1-9]\d*(\.\d+)?$" >
+    <button [disabled]="!firstNumberToAdd.valid || !secondNumberToAdd.valid" (click)=performAddition();createAddEquation()> = </button>
+    <span *ngIf="resultVal">
+      {{equationAdd}}
+    </span>
+    <div
+      [hidden]="(firstNumberToAdd.valid || firstNumberToAdd.pristine) && (secondNumberToAdd.valid || secondNumberToAdd.pristine)">
+      Please enter a numerical value.
+    </div>
+  </div>
 
-<div>
-  <input [(ngModel)]="firstNumSubtract">
-  <!-- <br/> -->
-  -
-  <input [(ngModel)]="secondNumSubtract">
-  <button (click)=performSubtraction();createSubtractEquation() > = </button>
-  <span *ngIf="resultVal">
-    {{equationSubtract}}
-  </span>
-</div>
+  <div>
+    <input [(ngModel)]="firstNumSubtract" type="text" name="firstNumberSubtract" #firstNumberSubtract="ngModel" pattern="^[1-9]\d*(\.\d+)?$">
+    -
+    <input [(ngModel)]="secondNumSubtract" type="text" name="secondNumberSubtract" #secondNumberSubtract="ngModel" pattern="^[1-9]\d*(\.\d+)?$">
+    <button [disabled]="!firstNumberSubtract.valid || !secondNumberSubtract.valid" (click)=performSubtraction();createSubtractEquation()> = </button>
+    <span *ngIf="resultVal">
+      {{equationSubtract}}
+    </span>
+    <div
+    [hidden]="(firstNumberSubtract.valid || firstNumberSubtract.pristine) && (secondNumberSubtract.valid || secondNumberSubtract.pristine)">
+    Please enter a numerical value.
+  </div>
+  </div>
 
-<div>
-  <input [(ngModel)]="firstNumMultiply">
-  <!-- <br/> -->
-  *
-  <input [(ngModel)]="secondNumMultiply">
-  <button (click)=performMultiplication();createMultiplyEquation() > = </button>
-  <span *ngIf="resultVal">
-    {{equationMultiply}}
-  </span>
-</div>
+  <div>
+    <input [(ngModel)]="firstNumMultiply" type="text" name="firstNumberMultiply" #firstNumberMultiply="ngModel" pattern="^[1-9]\d*(\.\d+)?$">
+    *
+    <input [(ngModel)]="secondNumMultiply" type="text" name="secondNumberMultiply" #secondNumberMultiply="ngModel" pattern="^[1-9]\d*(\.\d+)?$">
+    <button [disabled]="!firstNumberMultiply.valid || !secondNumberMultiply.valid" (click)=performMultiplication();createMultiplyEquation()> = </button>
+    <span *ngIf="resultVal">
+      {{equationMultiply}}
+    </span>
+    <div
+    [hidden]="(firstNumberMultiply.valid || firstNumberMultiply.pristine) && (secondNumberMultiply.valid || secondNumberMultiply.pristine)">
+    Please enter a numerical value.
+  </div>
+  </div>
 
-<div>
-  <input [(ngModel)]="firstNumDivide">
-  <!-- <br/> -->
-  /
-  <input [(ngModel)]="secondNumDivide">
-  <button (click)=performDivision();createDivideEquation() > = </button>
-  <span *ngIf="resultVal">
-    {{equationDivide}}
-  </span>
-</div>
+  <div>
+    <input [(ngModel)]="firstNumDivide" type="text" name="firstNumberDivide" #firstNumberDivide="ngModel" pattern="^[1-9]\d*(\.\d+)?$">
+    /
+    <input [(ngModel)]="secondNumDivide" type="text" name="secondNumberDivide" #secondNumberDivide="ngModel" pattern="^[1-9]\d*(\.\d+)?$">
+    <button [disabled]="!firstNumberDivide.valid || !secondNumberDivide.valid" (click)=performDivision();createDivideEquation()> = </button>
+    <span *ngIf="resultVal">
+      {{equationDivide}}
+    </span>
+    <div
+    [hidden]="(firstNumberDivide.valid || firstNumberDivide.pristine) && (secondNumberDivide.valid || secondNumberDivide.pristine)">
+    Please enter a numerical value.
+  </div>
+  </div>
 
 </h1>
-<!-- input type='button' -->

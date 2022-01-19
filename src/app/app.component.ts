@@ -25,7 +25,7 @@ export class AppComponent {
 
   createAddEquation() {
     this.clearningEquations()
-    this.equationAdd = this.firstNumAdd + " + " + this.secondNumAdd + " = " + this.resultVal.toString()
+    this.equationAdd = this.firstNumAdd + " + " + this.secondNumAdd + " = " + (this.resultVal).toFixed(2).toString()
     this.firstNumAdd = "";
     this.secondNumAdd = "";
   }
